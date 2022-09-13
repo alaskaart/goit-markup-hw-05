@@ -717,44 +717,31 @@ border-bottom: 1px solid var(--header);
     overflow: hidden;
 }
 
-.card-thumb::before {
-    display: inline-block;
-    content: " ";
+.overlay {
     position: absolute;
+    left: 0;
     bottom: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(33, 150, 243, 0.9);;
 
     transform: translateY(100%);
-    transition: 250ms ease;
+    transition: transform var(--anim-slow);
+}
+
+.element .link:hover .overlay,
+.element .link:focus .overlay {
+    transform: translateY(0);
 }
 
 .card-info {
-    display: block;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
     padding: 63px 24px;
 
     color: var(--primary-white-color);
     font-size: 18px;
     line-height: 1.55;
-
-    transform: translateY(100%);
-    transition: transform 250ms ease;
 }
  
-.element:hover .card-info {
-    transform: translateY(0);
-}
-
-
-.element:hover .card-thumb::before {
-    transform: translateY(0);
-}
-
 /* backrdop + modal */
 
 .backdrop {
